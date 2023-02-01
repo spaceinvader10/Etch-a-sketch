@@ -1,0 +1,35 @@
+.grid-container {
+    display: grid;
+    height: 50vh;
+    width: 50vh;
+    grid-template-columns: repeat(4, 0.25fr);
+    border: 3px greenyellow;
+    padding: 30px;
+}
+
+.grid-item {
+    background-color:whitesmoke;
+    border: solid 2px black;
+   
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 100px;
+}
+
+h1{
+
+    max-width: 300px;
+    max-height: 100px;
+
+}
+
+#numberOfSquares{
+    margin-left: 50px;
+    width: 180px;
+    height: 20px;
+    background-color: aliceblue;
+}
