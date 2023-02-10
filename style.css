@@ -4,12 +4,11 @@
     align-items: center;
     border: 15px solid rgb(22, 23, 23);
     background-color: white;
-    height: 80vh;
-    width: 80vh;
     margin: 0 auto;
-    margin-top: 10vh;
+    margin-top: 7vh;
+    width: 80vh;
+    height: 80vh;
 }
-
 
 .grid-container {
     display: grid;
@@ -40,27 +39,79 @@
     align-items: center;
 }
 
+#flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+#images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
 h1{
-
-    max-width: 300px;
-    max-height: 100px;
-
+    width: 200px;
+    height: 100px;
 }
 
 #numberOfSquares{
-    margin-left: 20px;
-    width: 180px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 150px;
     height: 20px;
-   
 }
 
-span{
-    display: inline-block;
-    background-image: url(assets/images/paint_palette.png);
-    background-size: contain;
-    background-repeat: none;
-    height: 12vh;
-    width: 12vh;
-    margin-left: 40vh;
+#numbersOfSquaresInput{
+    height: auto;
+}
+    
+#rainbowBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    margin-left: 30px;
 }
 
+#explaination {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+
+#rainbowBtn + #explaination {
+    opacity: 0;
+    transition: ease;
+}
+
+#rainbowBtn:hover + #explaination{
+    opacity:1;
+}
+
+#paint_palette {
+    display: flex;
+    height: 70px;
+    width: 70px;
+    margin-right: 10px;
+}
+
+#rainbowBtn {
+    display: flex;
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+#rainbowBtn:active, #paint_palette:active {
+    border: 1px dotted rgb(72, 166, 237);
+    opacity: 0.78;
+}

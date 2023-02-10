@@ -5,6 +5,8 @@ let gridContainer = document.getElementsByClassName('grid-container')[0];
 
 let squareNumber = document.getElementById('numberOfSquaresInput');
 
+let rainbowButton = document.getElementById('rainbowBtn');
+
 squareNumber.addEventListener('keydown', numberUpdate);
 
 function numberUpdate(event) {
@@ -23,6 +25,13 @@ function numberUpdate(event) {
             let square = document.createElement('div');
             square.className = 'grid-item';
             gridContainer.appendChild(square);
+
+            //if the rainbow was clicked before then replace hover with rainbow hover
+            rainbowButton.addEventListener('click',function(){
+                square.addEventListener('click', function() {
+                    square.style.backgroundColor = 'rgb('+Math.floor(Math.random()*399)+','+Math.floor(Math.random()*399)+',' + Math.random()*199+')';
+                })   
+            })
 
             square.addEventListener('click', function(){
                 square.classList.toggle('hover');
