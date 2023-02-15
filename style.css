@@ -60,6 +60,11 @@ h1{
     height: 100px;
 }
 
+h4 {
+    width: 200px;
+    height: 70px;
+}
+
 #numberOfSquares{
     display: flex;
     justify-content: center;
@@ -78,7 +83,7 @@ h1{
     justify-content: center;
     align-items: center;
     height: 70px;
-    margin-left: 30px;
+    margin-left: 90px;
 }
 
 #explaination {
@@ -97,12 +102,17 @@ h1{
     opacity:1;
 }
 
-#paint_palette {
+#colorImage {
     display: flex;
     height: 70px;
     width: 70px;
     margin-right: 10px;
 }
+
+#c {
+    display: none;
+}
+
 
 #rainbowBtn {
     display: flex;
@@ -111,7 +121,7 @@ h1{
     margin-right: 10px;
 }
 
-#rainbowBtn:active, #paint_palette:active {
+#rainbowBtn:active, #colorImage:active {
     border: 1px dotted rgb(72, 166, 237);
     opacity: 0.78;
 }

@@ -15,15 +15,16 @@
     <h1>Etch-e-sketch</h1>
     <div id="flex-row">
         <div id='numberOfSquares'>
-            <h4>Enter number of Squares:</h4>
+            <h4> Enter number of Squares (100 x 100 max) and then choose a color or click the Rainbow for random colors!</h4>
             <input type="text" id='numberOfSquaresInput'>
         </div>
         <div id="rainbowBox">
             <div id="images">
-                <img src="assets/images/paint_palette.png" alt="palette" id="paint_palette">
+                <img src="assets/images/paint_palette.png" alt="palette" id="colorImage">
                 <img src="assets/images/rainbow.jpg" alt="rainbow" id='rainbowBtn'>
+                <input type="color" id='c' tabindex="-1">
             </div>
-            <p id="explaination">Click the Rainbow Cloud for random colored squares!</p>
+            <!-- <p id="explaination">Click the Rainbow Cloud for random colored squares!</p> -->
         </div>
     </div>
 </div>

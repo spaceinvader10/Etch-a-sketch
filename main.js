@@ -1,41 +1,56 @@
-
 let number = 15;
-
-let gridContainer = document.getElementsByClassName('grid-container')[0];
-
+let gridContainer = document.querySelector('.grid-container');
 let squareNumber = document.getElementById('numberOfSquaresInput');
-
 let rainbowButton = document.getElementById('rainbowBtn');
+let paintButton = document.getElementById('colorImage');
+let colorPicker = document.getElementById('c');
+let color = '#000199';
+let rainbowMode = false;
 
 squareNumber.addEventListener('keydown', numberUpdate);
 
+rainbowButton.addEventListener('click', function() {
+    rainbowMode = !rainbowMode;
+});
+
 function numberUpdate(event) {
-    if (event.key === 'Enter') {
-        console.log(squareNumber.value);
+    if (event.key === 'Enter' && (squareNumber.value < 101)) {
+      
         number = squareNumber.value;
 
         // Remove existing squares
-        while(gridContainer.firstChild){
+        while (gridContainer.firstChild) {
             gridContainer.removeChild(gridContainer.firstChild);
         }
-        //Checks if gridContainer has a firstChild, if it does, then while that is true start removing firstChild until none exist.
-        //this is put here so it removes the previous divs before the new divs are entered in
 
         for (let i = 0; i < number; i++) {
             let square = document.createElement('div');
             square.className = 'grid-item';
             gridContainer.appendChild(square);
 
-            //if the rainbow was clicked before then replace hover with rainbow hover
-            rainbowButton.addEventListener('click',function(){
-                square.addEventListener('click', function() {
-                    square.style.backgroundColor = 'rgb('+Math.floor(Math.random()*399)+','+Math.floor(Math.random()*399)+',' + Math.random()*199+')';
-                })   
-            })
+            paintButton.addEventListener('click', function(){
+                colorPicker.click();
+                colorPicker.addEventListener('input', function(){
+                    
+                    color = colorPicker.value;
+                    console.log(color);
+                    // const hoverElements = document.querySelectorAll('.hover');
+                    // hoverElements.forEach(function(hoverElement){
+                    //     hoverElement.style.setProperty('background-color', color, 'important');
+                    // });
+                });
 
-            square.addEventListener('click', function(){
-                square.classList.toggle('hover');
-            })
+            });
+
+            square.addEventListener('click', function() {
+                if (rainbowMode) {
+                    square.style.backgroundColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                
+                } else {
+                    square.style.backgroundColor = color;
+                    // square.classList.toggle('hover');
+                }
+            });
         }
     }
 }
